@@ -1,39 +1,31 @@
-public class Persona {
-    public String nombre;
-    public float edad;
-    public int documentoid;
+public class Profesor extends Persona {
+    private String materiaEsp;
 
-    public Persona(String nombre, float edad, int documentoid) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.documentoid = documentoid;
+    public Profesor(String nombre, float edad, int documentoid, String materiaEsp) {
+        super(nombre, edad, documentoid);
+        this.materiaEsp = materiaEsp;
     }
 
+    public void usarSuper() {
+        System.out.println(super.documentoid);
+        System.out.println(super.edad);
+        System.out.println(super.nombre);
+        super.mostrarEdad();
+    }
+
+    @Override
     public void mostrarEdad() {
-        System.out.println("La edad es: " + edad);
+        // super.mostrarEdad();
+        System.out.println("La edad del Profesor es: " + edad);
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getMateriaEsp() {
+        return materiaEsp;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setMateriaEsp(String materiaEsp) {
+        this.materiaEsp = materiaEsp;
     }
 
-    public float getEdad() {
-        return edad;
-    }
-
-    public void setEdad(float edad) {
-        this.edad = edad;
-    }
-
-    public int getDocumentoid() {
-        return documentoid;
-    }
-
-    public void setDocumentoid(int documentoid) {
-        this.documentoid = documentoid;
-    }
 }
+
